@@ -47,6 +47,7 @@ const token = ref({
   total: 0
 })
 
+console.log(import.meta.env)
 const handleSubmit = async () => {
   isLoading.value = true
   try {
@@ -65,11 +66,10 @@ const handleSubmit = async () => {
       best_of: 1,
       stop: null
     })
-    console.log(data)
     answer.value = data.text
     token.value = { completion: completion_tokens, prompt: prompt_tokens, total: total_tokens }
   } catch (error) {
-    window.alert('api 錯誤，找 Marc')
+    window.alert('api 錯誤')
   } finally {
     isLoading.value = false
   }
