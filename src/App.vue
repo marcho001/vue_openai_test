@@ -47,7 +47,6 @@ const token = ref({
   total: 0
 })
 
-console.log(import.meta.env)
 const handleSubmit = async () => {
   isLoading.value = true
   try {
